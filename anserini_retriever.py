@@ -1,12 +1,10 @@
-from transformers import *
+from pyserini import *
 
 
 class AnseriniRetriever:
 
-    def __init__(self, indexPath: str, bertPath: str):
+    def __init__(self, indexPath: str):
         self.indexPath = indexPath
-        self.tokenizer = AutoTokenizer.from_pretrained(bertPath, do_lower_case=False)
-        self.model = AutoModel.from_pretrained(bertPath)
 
-    def getTopKPassages(self):
+    def getTopKPassages(self, K: int, passageType: str):
         pass
