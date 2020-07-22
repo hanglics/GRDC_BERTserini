@@ -3,3 +3,4 @@
 indexes/
 BERT/
 .DS_Store
+__pycache__/

@@ -6,5 +6,8 @@ class AnseriniRetriever:
     def __init__(self, indexPath: str):
         self.indexPath = indexPath
 
-    def getTopKPassages(self, K: int, passageType: str):
-        pass
+    def parsePassageType(self, K: int, passageType: int):
+
+        retrievedDocs = []
+
+        return retrievedDocs

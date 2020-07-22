@@ -1,3 +1,5 @@
+from anserini_retriever import *
+
 
 def main():
     pass
