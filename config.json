@@ -1,0 +1,16 @@
+{
+  "BERT_BASE": "bert-base-uncased",
+  "BERT_SQUAD_1.1": "csarron/bert-base-uncased-squad-v1",
+  "BERT_SQUAD_2.0": "twmkn9/bert-base-uncased-squad2",
+  "INDEX": "indexes/grdc_index_07_08",
+  "BM25": {
+    "K1": 0.9,
+    "B": 0.4
+  },
+  "RM3": {
+    "FB_TERMS": 10,
+    "FB_DOCS": 10,
+    "ORIGINAL_QUERY_WEIGHT": 0.5
+  },
+  "LINEAR_MIX": 0.5
+}
