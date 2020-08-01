@@ -1,5 +1,6 @@
 from anserini_retriever import *
 from bert_reader import *
+import json
 
 
 def getScoresFromRetriever(CONF, topK, enableRM3, query):
@@ -7,10 +8,15 @@ def getScoresFromRetriever(CONF, topK, enableRM3, query):
     hits = retriever.getRawDocumentHits(query)
     collection = []
     for each in hits:
+        content = retriever.searcher.doc(each.docid).contents()
+        raw = retriever.searcher.doc(each.docid).raw()
+        rawContent = json.loads(raw)
+        title = rawContent["report_title"]
         temp = {
             "docid": each.docid,
             "score": each.score,
-            "content": retriever.searcher.doc(each.docid).contents()
+            "content": content,
+            "title": title
         }
         collection.append(temp)
     return collection
