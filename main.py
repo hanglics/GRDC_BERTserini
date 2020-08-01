@@ -10,7 +10,7 @@ print("Loaded")
 print("--------------------------------")
 
 
-def main():
+def BERTSerini():
     topK = input("Top K Passages (Int Only): ")
     enableRM3 = input("Enable RM3? (Y/N) ")
     if enableRM3 is "Y" or "y":
@@ -28,6 +28,23 @@ def main():
     res = sorted(res, key=lambda x: x["interpScore"], reverse=True)
     for each in res:
         print(f'{res.index(each) + 1:2} {each["docid"]:15}  {each["interpScore"]:.5f}')
+
+
+def BERTPRFTOPK():
+    pass
+
+
+def main():
+    print("Perform BERTserini or BERT Top K PRF?")
+    print("1. BERTserini")
+    print("2. BERT Top K PRF")
+    selection = input("Select: ")
+    if int(selection) is 1:
+        BERTSerini()
+    elif int(selection) is 2:
+        BERTPRFTOPK()
+    else:
+        print("Wrong input.")
 
 
 if __name__ == '__main__':
